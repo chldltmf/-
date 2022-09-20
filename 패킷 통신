@@ -25,6 +25,6 @@
   ->패킷 전송 방식을 사용하게 되면, 중간 노드 각각에서 다른 노드로 이동할 때마다 최적의 경로를 통해 이동하기 때문에 전송 효율이 매우 높고, 노드들 간의 경로를 어느 한 패킷이 독점하는 것이 아닌 공유하는 형태이기 때문에 회선 교환 방식보다 훨씬 효율적
 - 현 시대에는 거의 모든 통신이 패킷 전송 방식을 사용
 
-참조 : <a>https://velog.io/@haero_kim/%EB%AC%BC-%ED%9D%90%EB%A5%B4%EB%93%AF-%EC%9D%BD%EC%96%B4%EB%B3%B4%EB%8A%94-TCPIP</a>
+참조 :https://velog.io/@haero_kim/%EB%AC%BC-%ED%9D%90%EB%A5%B4%EB%93%AF-%EC%9D%BD%EC%96%B4%EB%B3%B4%EB%8A%94-TCPIP
 https://inpa.tistory.com/entry/%EC%9B%B9-%ED%86%B5%EC%8B%A0-%EA%B8%B0%EB%B3%B8-%EC%9D%B4%EB%A1%A0-%ED%86%B5%ED%95%A9-%EC%9A%94%EC%95%BD-%EC%A0%95%EB%A6%AC?category=889117
 
