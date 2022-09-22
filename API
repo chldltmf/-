@@ -1,0 +1,34 @@
+API
+- 프론트와 백엔드의 구분
+- 요청받은 데이터를 프론트에 전달
+- 요청받은 데이터는 List(key : value) 형태
+  -> Object{
+         name : 홍길동,
+         랭킹  : 1
+         ......
+     }
+     
+     
+- Vo는 dto랑 비슷하게 써도 상관 ㄴㄴ
+- json : 프론트에서 요청하는 정보를 List[key:value,....]에 담아 데이터 전송
+- RestController = Controller+ResponseBody : @ResponseBody를 따로 적지 않아도 리턴 값으로 지정
+- 자체적인 오류코드생성
+  -> 개발한 API가 정상적으로 작동해서 200이 뜨더라도 연결된 다른 OpenAPI가 4xx이 떠서 오류 발생
+     -> 이럴경우 따로 오류 코드 작성해서 리턴받아야함 -> 왜냐하면 직접개발한 API는 정상이기때문에 성공적으로 작동한줄 알기때문에
+  -> 오류코드와 메시지,Objsect타입으로 body 생성
+     -> body : 사용자가 요청한 정보 -> 중요한 정보는 암호화해서 처리
+     
+     
+@RequestBody
+- 이 어노테이션이 붙은 파라미터에는 http요청의 본문(body)이 그대로 전달
+- 반면에 xml이나 json기반의 메시지를 사용하는 요청의 경우에 이 방법이 매우 유용
+
+@ResponseBody 
+- @Responsebody 어노테이션을 사용하면 http요청 body를 자바 객체로 전달받을 수 있다.
+
+@RequestBody / @ResponseBody 정리. 
+- 클라이언트에서 서버로 필요한 데이터를 요청하기 위해 JSON 데이터를 요청 본문에 담아서 서버로 보내면,
+서버에서는 @RequestBody 어노테이션을 사용하여 HTTP 요청 본문에 담긴 값들을 자바객체로 변환시켜, 객체에 저장한다.
+서버에서 클라이언트로 응답 데이터를 전송하기 위해 @ResponseBody 어노테이션을 사용하여 자바 객체를 HTTP 응답 본문의 객체로 변환하여 클라이언트로 전송한다. 
+
+출처: https://cheershennah.tistory.com/179 [Today I Learned. @cheers_hena 치얼스헤나:티스토리]
