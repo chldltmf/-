@@ -45,8 +45,9 @@
  - https://jhnyang.tistory.com/268
  
  12. 포트가 제대로 열려 있는지 확인
-  - netstat -an | grep 8080 (Listen 일 경우 정상)
+  - netstat -an | grep 8080 (Listen 일 경우 정상 : 서버의 데몬이 떠 있어서 클라이언트의 접속 요청을 기다리고 있는 상태)
   - netstat - 네트워크 접속, 라우팅 테이블, 네트워크 인터페이스의 통계 정보를 보여주는 도구
   - netstat -an | grep 포트번호 : 특정 포트가 사용 중에 있는지 확인
+  - https://blog.naver.com/ncloud24/221388026417
 
 13. 웹에서 서비스 url 입력하여 화면이 제대로 뜨는지 확인
