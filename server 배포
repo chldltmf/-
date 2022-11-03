@@ -7,7 +7,7 @@
 2. build/libs 하위에 빌드된 jar 생성
 
 3. sftp 업로드  (#> sftp 계정@아이피)
- - #> sftp autocarz@133.186.209.56
+ - #> sftp dddd@133.01.11
  - sftp를 이용해 서버접속후 파일 업로드(ssh 확장 프로토콜)
  
 4. sftp 접속 상태에서
@@ -20,7 +20,7 @@
 7. sftp 로그아웃하는 명령어는 빠빠이 'bye'
 
 8. 서버를 접속 (ssh 계정@아이피)
- - ssh autocarz@133.186.209.56 (비번: autocarz!@#$)
+ - ssh dddd@133.01.11 (비번: autocarz!@#$)
  - 암호화해서 서버접속
  - https://nochoco-lee.tistory.com/385
  - https://parkadd.tistory.com/129
