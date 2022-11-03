@@ -1,0 +1,52 @@
+1. ./gradlew build -x test 빌드
+  - gradlew (gradle wrapper) : gradle wrapper 줄여서 gradlew 는 새로운 환경에서 프로젝트를 설정할 때 java나 gradle을 설치하지 않고 바로 빌드할 수 있게 해주는 역할
+  - gradlew 는 shell script(window의 bat파일같은것 : 실행파일)
+  - 프로젝트 아래경로에 gradlew파일 위치
+  - -x test ; 단위 test하지않고 빌드
+  
+2. build/libs 하위에 빌드된 jar 생성
+
+3. sftp 업로드  (#> sftp 계정@아이피)
+ - #> sftp autocarz@133.186.209.56
+ - sftp를 이용해 서버접속후 파일 업로드(ssh 확장 프로토콜)
+ 
+4. sftp 접속 상태에서
+ - 기본 리눅스 명령어는 서버 명령어로 인식.
+ - 로컬 명령어를 인식하기 위해서는 명령어 앞에 소문자 L 을 붙여서 사용. ex) lls, lcd
+5. 파일을 전송하는 명령어는 'put 파일명'
+
+6. 파일을 가져오는 명령어는 'get 파일명'
+
+7. sftp 로그아웃하는 명령어는 빠빠이 'bye'
+
+8. 서버를 접속 (ssh 계정@아이피)
+ - ssh autocarz@133.186.209.56 (비번: autocarz!@#$)
+ - 암호화해서 서버접속
+ - https://nochoco-lee.tistory.com/385
+ - https://parkadd.tistory.com/129
+ - https://velog.io/@hyeseong-dev/%EB%A6%AC%EB%88%85%EC%8A%A4-ssh%EB%9E%80
+
+9. 서버에서 jar 파일을 실행
+- nohup java -jar -Dspring.profiles.active=stg -Dserver.port=8080 경로/jar 파일명 &
+- 사용자가 사용을 종료하거나 로그아웃을 해도 프로세스가 종료되지 않음.(백그라운드 배포)
+- https://greensky0026.tistory.com/261
+
+10. 로그 트래킹 - tail -f nohup.out
+-트래킹을 중단 : control+c
+- tail : 파일의 마지막 부분을 출력
+- -f : 파일의 10줄을 출력해주고 파일의 내용을 실시간으로 계속해서 출력 (default : 기본 출력은 파일의 마지막 10줄을 보여준다.)
+- 표준 출력을 nohup.out (또는 다른 곳) 으로 돌리는 작업을 수행
+
+11. 프로세스가 제대로 실행되고 있는지 확인명령어 
+ - ps -ef | grep java
+ - ps : 현재 실행중인 프로세스 목록과 상태를 보여줌
+ - -ef : 'ps -ef'는 System V 계열 옵션으로 'ps aux'처럼 시스템에 동작중인 모든 프로세스를 full format으로 (즉 자세히) 출력
+ - grep : 특정 프로세스에 대해서 보고 싶을 경우 'grep'명령어를 같이 활용
+ - https://jhnyang.tistory.com/268
+ 
+ 12. 포트가 제대로 열려 있는지 확인
+  - netstat -an | grep 8080 (Listen 일 경우 정상)
+  - netstat - 네트워크 접속, 라우팅 테이블, 네트워크 인터페이스의 통계 정보를 보여주는 도구
+  - netstat -an | grep 포트번호 : 특정 포트가 사용 중에 있는지 확인
+
+13. 웹에서 서비스 url 입력하여 화면이 제대로 뜨는지 확인
